@@ -1,7 +1,9 @@
 /* Example in Node.js */
+//require("dotenv").config();
 const Express = require("express");
 const axios = require("axios");
 const router = Express.Router();
+const apiUrl = process.env.APIURL;
 
 //const getListings = await (req, res) => {
 async function getListings(req, res) {
@@ -11,7 +13,7 @@ async function getListings(req, res) {
         "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
         {
           headers: {
-            "X-CMC_PRO_API_KEY": "527cfc00-6677-4422-9d1d-d43b52dc8d6b",
+            "X-CMC_PRO_API_KEY": process.env.TOKENSECRET,
           },
         }
       );

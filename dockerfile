@@ -13,3 +13,6 @@ COPY . .
 
 CMD ["node", "src/app.js"]
 EXPOSE 3000
+
+#docker tag local-image:tagname new-repo:tagname
+#docker push new-repo:tagname
